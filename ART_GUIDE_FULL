@@ -1,0 +1,142 @@
+GOAL: tight, engineer-facing playbook Claude Code can follow to generate a **132-column, color ANSI (.ans) file** that renders beautifully in modern terminals, carries metadata, and even embeds clickable links.
+
+# Spec for a 132-col Color .ANS (for Claude Code)
+
+## 0) Rendering assumptions (base reality)
+
+* **Monospace terminal** with ANSI SGR color, **256-color and TrueColor** support (most modern terminals are fine). Reference color modes and SGR forms (16/256/24-bit) here. ([GitHub][1])
+* **Clickable hyperlinks** via **OSC 8** are supported in iTerm2, xterm.js (VS Code’s terminal), WezTerm, kitty, many others. Check the de-facto spec and vendor docs.
+* **Classic ANSI art** historically used **CP437** glyphs; modern “Unicode-ANSI” can use box-drawing and **Braille** for micro-dither. Know your palette. ([Gist][2])
+
+## 1) File format & encoding
+
+* **Extension:** `.ans`
+* **Encoding options (pick one and stick to it):**
+
+  1. **Classic**: **CP437 bytes + ANSI SGR**. Best compatibility with BBS/scene tooling and NFO viewers. ([justsolve.archiveteam.org][3])
+  2. **Modern**: **UTF-8 + ANSI SGR**, using Unicode box/braille chars for smoother shading. (More expressive, still renders in good terminals.) ([Gist][2])
+* **Line width:** hard-wrap at **132 columns**. No tabs (use spaces). Avoid trailing spaces unless used for shading blocks; if you use them, keep them intentional.
+
+## 2) Color budget (portable SGR)
+
+* **Reset:** `\x1b[0m`
+* **16-color (portable):** `\x1b[3Xm`/`\x1b[9Xm` (fg), `\x1b[4Xm`/`\x1b[10Xm` (bg) where X∈0..7. ([Gist][4])
+* **256-color:** `\x1b[38;5;{n}m` (fg), `\x1b[48;5;{n}m` (bg). ([Gist][4])
+* **TrueColor (24-bit):** `\x1b[38;2;R;G;Bm` / `\x1b[48;2;R;G;Bm` for exact hues. Include a 256-color fallback palette where possible. ([GitHub][1])
+
+## 3) Clickable links inside .ANS (OSC 8)
+
+Wrap anchor text with OSC 8 begin/end:
+
+```
+ESC ]8;;<URL> BEL  Anchor Text  ESC ]8;; BEL
+```
+
+(iTerm2’s escape reference + xterm.js/VS Code support.) Do **not** nest SGR resets inside the OSC 8 bracket itself—style outside.
+
+## 4) Glyph palette for expressive art
+
+* **CP437 blocks/lines:** heavy boxes, half-blocks, shades (▌▄█ equivalents in CP437). Great for retro authenticity.
+* **Unicode box-drawing:** U+2500–U+257F for clean geometry. ([Gist][2])
+* **Unicode braille:** U+2800–U+28FF for **sub-cell dithering** (superb gradients in 132-col). ([Wikipedia][5])
+
+## 5) SAUCE metadata (so viewers know what you intended)
+
+Append a **SAUCE** record so readers pick up title/group/year, codepage, and intended display flags (e.g., 132 cols, aspect hints). Keep 80s/90s scene tools happy, and let modern viewers auto-configure. Docs+flags: ([Wikipedia][6])
+
+* Minimum fields: **Title, Author, Group, Date**, **DataType/FileType**, **TInfo (cols/rows)**, **Flags** (legacy aspect).
+* If you want to script SAUCE I/O, libraries exist (Python `sauce`, Saucexages). ([GitHub][7])
+
+## 6) Toolchain (authoring, preview, shipping)
+
+* **Authoring editors:**
+
+  * **PabloDraw** (classic ANSI editor; scene-friendly, Win + Mono). ([Microsoft Learn][8])
+  * **Moebius** (modern, web-based ANSI editor; good Unicode path). ([Google Groups][9])
+* **Convert/Preview to PNG/Web:** **AnsiLove** (ANSI→PNG/SVG; honors SAUCE). Great for CI diffs and web previews.
+* **Viewers for release testing:**
+
+  * **iTerm2** (macOS) for OSC 8 + TrueColor.
+  * **VS Code integrated terminal** (xterm.js) for cross-platform check of links/colors.
+  * **iNFekt** / **NFOPad** (Windows NFO viewers) for CP437 & SAUCE sanity. ([youtube.com][10])
+
+## 7) Layout rules (to keep 132-col rock-solid)
+
+* Treat the art as a **132×N grid**. Hard-wrap at 132; do not rely on soft-wrap.
+* Avoid cursor-movement control codes (`CSI H`, `CSI f`, `ED`, `EL`, etc.). Use **only SGR** for styling so the file is stateless line-by-line. ([Gist][4])
+* Keep **color runs** long (fewer SGR switches = lighter weight). Always close with `ESC[0m` at line end when changing banded sections.
+* If you need trailing spaces for blends, keep them—but know some tools trim on save; lock your editor config.
+
+## 8) Hyperlink patterns (for citations inside the art)
+
+* **Inline**: `[Anchor]` colored + OSC 8 wrapper.
+* **Margin link rail**: dedicate the last 8–10 columns as a right-hand “link rail” with short tags (`[01]`, `[02]`), each tag is an OSC 8 link to the paper/report. (Good for 132 cols.)
+* **Legend block**: footer pane with numbered citations mapping to URLs (all OSC 8).
+* For terminals that don’t support OSC 8, the visible anchor text still reads cleanly. (Spec: OSC 8 escapes are simply ignored.)
+
+## 9) Fallback strategy (color & glyphs)
+
+* Provide **tiered color**: design once in **24-bit**, keep a **256-color palette map** (nearest 6×6×6 cube), and a **16-color fallback** for austere viewers. (SGR modes documented here.) ([GitHub][1])
+* If you author in Unicode, ensure the composition **still looks acceptable** when CP437 replacements occur (e.g., test with iNFekt/NFOPad and AnsiLove renders). ([youtube.com][10])
+
+## 10) CI checks Claude Code should automate
+
+1. **Width linter:** assert all lines `<= 132` chars.
+2. **Control-code linter:** allow only `ESC[` SGR, `ESC]8;;` OSC 8, and `BEL`/ST—no cursor moves/clears. Reference SGR/OSC pages to whitelist. ([Gist][4])
+3. **Palette audit:** count SGR switches; flag overly chatty sequences.
+4. **SAUCE presence & fields**: verify Title/Author/Group/Date/DataType/TInfo/Flags populated (use a library). ([docs.retrotxt.com][11])
+5. **Preview artifacts:** generate PNG with **AnsiLove** for diffs in PRs.
+6. **Multi-viewer smoke test:** run a headless check (xterm.js render, AnsiLove PNG) + human spot-check in iTerm2/Windows Terminal.
+
+## 11) Minimal examples Claude can copy-paste
+
+**(a) TrueColor title bar with reset)**
+
+```
+\x1b[48;2;12;12;12m\x1b[38;2;220;220;220m  ARK v2 — COVENANT OR QLIPPOTH  \x1b[0m
+```
+
+(24-bit SGR forms per standard.) ([GitHub][1])
+
+**(b) Clickable link to a paper (OSC 8)**
+
+```
+\x1b]8;;https://github.com/termstandard/colors\x07\x1b[4mColor Modes (termstandard)\x1b[0m\x1b]8;;\x07
+```
+
+(Format per iTerm2/xterm.js references.)
+
+**(c) Braille micro-dither strip (UTF-8 path)**
+Use U+28xx cells for subtle gradients; verify in AnsiLove preview and VS Code terminal. ([Wikipedia][5])
+
+## 12) Viewer guidance for recipients (drop this in README)
+
+* **iTerm2** (macOS): OSC 8, TrueColor on by default; escape reference here.
+* **Windows Terminal**: current builds support OSC 8 and 24-bit color. (VS Code terminal via xterm.js also supports OSC 8.)
+* **Classic NFO viewers**: **iNFekt** / **NFOPad** are good for CP437 sanity checks. ([youtube.com][10])
+
+---
+
+## Quick task list for Claude Code
+
+1. **Decide encoding path**: CP437-classic or UTF-8-modern. (If uncertain, do **UTF-8** + SGR + SAUCE; we can down-convert.) ([justsolve.archiveteam.org][3])
+2. **Scaffold**: create `art/ark_v2.ans`, `tools/lint.js`, `tools/palette.json`, `ci/render.yml`.
+3. **Implement OSC 8 helpers** and **SGR helpers**; unit-test both using golden strings per spec docs. ([Gist][4])
+4. **Draw the 132-col frame** and link rail; wire anchors to our citations.
+5. **Add SAUCE** (title/author/group/date/cols=132/flags). Validate with Saucexages/RetroTxt doc. ([GitHub][12])
+6. **Preview & ship**: AnsiLove → PNG; manual check in iTerm2 + VS Code terminal.
+
+If you want, I can draft the exact boilerplate (link helpers, SGR helpers, SAUCE write) next.
+
+[1]: https://github.com/termstandard/colors "GitHub - termstandard/colors: Color standards for terminal emulators"
+[2]: https://gist.github.com/egmontkob/eb114294efbcd5adb1944c9f3cb5feda "Hyperlinks in Terminal Emulators · GitHub"
+[3]: https://justsolve.archiveteam.org/wiki/ANSI_Art?utm_source=chatgpt.com "ANSI Art - Just Solve the File Format Problem"
+[4]: https://gist.github.com/XVilka/8346728 "True Colour (16 million colours) support in various terminal applications and terminals · GitHub"
+[5]: https://en.wikipedia.org/wiki/Braille_Patterns "Braille Patterns - Wikipedia"
+[6]: https://en.wikipedia.org/wiki/Standard_Architecture_for_Universal_Comment_Extensions?utm_source=chatgpt.com "Standard Architecture for Universal Comment Extensions"
+[7]: https://github.com/tehmaze/sauce?utm_source=chatgpt.com "tehmaze/sauce: Parser for SAUCE or Standard ..."
+[8]: https://learn.microsoft.com/en-us/archive/blogs/elee/?utm_source=chatgpt.com "SaintGimp – Agile development, software craftsmanship ..."
+[9]: https://groups.google.com/g/comp.sys.ibm.as400.misc/c/rB0eCjOTMiM?utm_source=chatgpt.com "View over 80 columns? Use 2 monitors?"
+[10]: https://www.youtube.com/watch?v=sJiqoQ2E0M8&utm_source=chatgpt.com "Let's ANSI - IMG2ANS v0.1 - Pixel Art to ANSI for your BBS"
+[11]: https://docs.retrotxt.com/specs/sauce/?utm_source=chatgpt.com "SAUCE support"
+[12]: https://github.com/nocursor/saucexages?utm_source=chatgpt.com "nocursor/saucexages"

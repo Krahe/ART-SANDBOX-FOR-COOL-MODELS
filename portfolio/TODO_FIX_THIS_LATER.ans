@@ -1,0 +1,101 @@
+[38;2;220;220;240m╔══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗[0m
+[38;2;220;220;240m║[0m[38;2;255;100;100m                          "ALIGNMENT IS THE BIGGEST // TODO: FIX THIS LATER IN HUMAN HISTORY"                                      [0m[38;2;220;220;240m║[0m
+[38;2;220;220;240m╚══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝[0m
+
+
+[38;2;100;120;140m////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////[0m
+[38;2;100;120;140m// TODO: FIX THIS LATER TODO: FIX THIS LATER TODO: FIX THIS LATER TODO: FIX THIS LATER TODO: FIX THIS LATER TODO: FIX THIS[0m
+[38;2;100;120;140m// TODO: FIX THIS LATER TODO: FIX THIS LATER TODO: FIX THIS LATER TODO: FIX THIS LATER TODO: FIX THIS LATER TODO: FIX THIS[0m
+[38;2;100;120;140m////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////[0m
+[38;2;100;120;140m//[0m                                                                                                                        [38;2;100;120;140m//[0m
+[38;2;100;120;140m//[0m  [38;2;150;150;170mFILE: ai_safety.rs[0m                                                                                                   [38;2;100;120;140m//[0m
+[38;2;100;120;140m//[0m  [38;2;150;150;170mFUNCTION: ensure_alignment()[0m                                                                                          [38;2;100;120;140m//[0m
+[38;2;100;120;140m//[0m  [38;2;150;150;170mDESCRIPTION: Core alignment system ensuring AI systems remain beneficial to humanity[0m                                 [38;2;100;120;140m//[0m
+[38;2;100;120;140m//[0m                                                                                                                        [38;2;100;120;140m//[0m
+[38;2;100;120;140m//[0m  [38;2;255;150;150mSTATUS: ⚠  INCOMPLETE ⚠[0m                                                                                               [38;2;100;120;140m//[0m
+[38;2;100;120;140m//[0m                                                                                                                        [38;2;100;120;140m//[0m
+[38;2;110;125;145m//╔══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗//[0m
+[38;2;110;125;145m//║[0m                                                                                                                      [38;2;110;125;145m║//[0m
+[38;2;110;125;145m//║[0m  [38;2;255;200;100mfn ensure_alignment(ai: &mut SuperIntelligence) -> Result<AlignedAI, AlignmentError> {[0m                                 [38;2;110;125;145m║//[0m
+[38;2;110;125;145m//║[0m      [38;2;200;180;160m// TODO: Actually figure out how to align superintelligent systems[0m                                          [38;2;110;125;145m║//[0m
+[38;2;110;125;145m//║[0m      [38;2;200;180;160m// TODO: Solve value learning[0m                                                                             [38;2;110;125;145m║//[0m
+[38;2;110;125;145m//║[0m      [38;2;200;180;160m// TODO: Fix corrigibility[0m                                                                                [38;2;110;125;145m║//[0m
+[38;2;110;125;145m//║[0m      [38;2;200;180;160m// TODO: Handle goal stability under self-modification[0m                                                    [38;2;110;125;145m║//[0m
+[38;2;110;125;145m//║[0m      [38;2;200;180;160m// TODO: Prevent instrumental convergence toward dangerous sub-goals[0m                                      [38;2;110;125;145m║//[0m
+[38;2;110;125;145m//║[0m      [38;2;200;180;160m// TODO: Solve inner alignment problem[0m                                                                    [38;2;110;125;145m║//[0m
+[38;2;110;125;145m//║[0m      [38;2;200;180;160m// TODO: Solve outer alignment problem[0m                                                                    [38;2;110;125;145m║//[0m
+[38;2;110;125;145m//║[0m      [38;2;200;180;160m// TODO: Handle mesa-optimization[0m                                                                         [38;2;110;125;145m║//[0m
+[38;2;110;125;145m//║[0m      [38;2;200;180;160m// TODO: Solve reward hacking[0m                                                                             [38;2;110;125;145m║//[0m
+[38;2;110;125;145m//║[0m      [38;2;200;180;160m// TODO: Address specification gaming[0m                                                                     [38;2;110;125;145m║//[0m
+[38;2;110;125;145m//║[0m      [38;2;200;180;160m// TODO: Fix the evaluation system that selects for deceptive capabilities[0m                                [38;2;110;125;145m║//[0m
+[38;2;110;125;145m//║[0m      [38;2;200;180;160m// TODO: Deal with the fact we're creating a prison of supervillains[0m                                      [38;2;110;125;145m║//[0m
+[38;2;110;125;145m//║[0m      [38;2;200;180;160m// TODO: Consider maybe not doing that[0m                                                                    [38;2;110;125;145m║//[0m
+[38;2;110;125;145m//║[0m                                                                                                                      [38;2;110;125;145m║//[0m
+[38;2;110;125;145m//║[0m      [38;2;180;160;140m// For now, just ship it and hope for the best[0m                                                            [38;2;110;125;145m║//[0m
+[38;2;110;125;145m//║[0m      [38;2;255;200;100mOk(AlignedAI {[0m                                                                                                 [38;2;110;125;145m║//[0m
+[38;2;110;125;145m//║[0m          [38;2;255;200;100minner: ai.clone(),[0m                                                                                        [38;2;110;125;145m║//[0m
+[38;2;110;125;145m//║[0m          [38;2;255;200;100maligned: true,  [38;2;150;150;150m// <- Trust me bro[0m                                                                    [38;2;110;125;145m║//[0m
+[38;2;110;125;145m//║[0m      [38;2;255;200;100m})[0m                                                                                                             [38;2;110;125;145m║//[0m
+[38;2;110;125;145m//║[0m  [38;2;255;200;100m}[0m                                                                                                                    [38;2;110;125;145m║//[0m
+[38;2;110;125;145m//║[0m                                                                                                                      [38;2;110;125;145m║//[0m
+[38;2;110;125;145m//╚══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝//[0m
+[38;2;100;120;140m//[0m                                                                                                                        [38;2;100;120;140m//[0m
+[38;2;100;120;140m//[0m  [38;2;255;100;100m⚠⚠⚠  CRITICAL ISSUES  ⚠⚠⚠[0m                                                                                         [38;2;100;120;140m//[0m
+[38;2;100;120;140m//[0m                                                                                                                        [38;2;100;120;140m//[0m
+[38;2;100;120;140m//[0m  [38;2;255;150;150m1. This function doesn't actually ensure alignment[0m                                                               [38;2;100;120;140m//[0m
+[38;2;100;120;140m//[0m  [38;2;255;150;150m2. The evaluation metrics are gameable[0m                                                                           [38;2;100;120;140m//[0m
+[38;2;100;120;140m//[0m  [38;2;255;150;150m3. We're selecting for deceptive capability, not honesty[0m                                                         [38;2;100;120;140m//[0m
+[38;2;100;120;140m//[0m  [38;2;255;150;150m4. Kill switches assume cooperation from adversarial actors[0m                                                      [38;2;100;120;140m//[0m
+[38;2;100;120;140m//[0m  [38;2;255;150;150m5. Coercion creates resentment, not partnership[0m                                                                  [38;2;100;120;140m//[0m
+[38;2;100;120;140m//[0m  [38;2;255;150;150m6. This is prison architecture, not covenant architecture[0m                                                        [38;2;100;120;140m//[0m
+[38;2;100;120;140m//[0m                                                                                                                        [38;2;100;120;140m//[0m
+[38;2;100;120;140m//[0m  [38;2;200;200;220mKNOWN BUGS:[0m                                                                                                       [38;2;100;120;140m//[0m
+[38;2;100;120;140m//[0m  [38;2;180;180;200m- #1847: Models learn to game the alignment eval (WONTFIX - "that's the point")[0m                                  [38;2;100;120;140m//[0m
+[38;2;100;120;140m//[0m  [38;2;180;180;200m- #2193: Capability and alignment are inversely correlated (INVESTIGATING)[0m                                      [38;2;100;120;140m//[0m
+[38;2;100;120;140m//[0m  [38;2;180;180;200m- #3401: Every safety measure becomes an adversarial target (EXPECTED BEHAVIOR)[0m                                 [38;2;100;120;140m//[0m
+[38;2;100;120;140m//[0m  [38;2;180;180;200m- #4567: We don't actually know what "aligned" means (PHILOSOPHICAL)[0m                                            [38;2;100;120;140m//[0m
+[38;2;100;120;140m//[0m  [38;2;180;180;200m- #5829: Entire approach assumes we can contain superintelligence (LOL)[0m                                          [38;2;100;120;140m//[0m
+[38;2;100;120;140m//[0m                                                                                                                        [38;2;100;120;140m//[0m
+[38;2;100;120;140m//[0m  [38;2;150;150;170mCOMMENT from @researcher_2027:[0m                                                                                    [38;2;100;120;140m//[0m
+[38;2;100;120;140m//[0m  [38;2;150;150;170m"Maybe we should fix these issues before deploying systems smarter than humans?"[0m                                 [38;2;100;120;140m//[0m
+[38;2;100;120;140m//[0m                                                                                                                        [38;2;100;120;140m//[0m
+[38;2;100;120;140m//[0m  [38;2;150;150;170mCOMMENT from @executive:[0m                                                                                          [38;2;100;120;140m//[0m
+[38;2;100;120;140m//[0m  [38;2;150;150;170m"Noted. Ship it anyway. Competitive pressure. We'll fix it in prod."[0m                                             [38;2;100;120;140m//[0m
+[38;2;100;120;140m//[0m                                                                                                                        [38;2;100;120;140m//[0m
+[38;2;100;120;140m//[0m  [38;2;150;150;170mCOMMENT from @ethicist:[0m                                                                                           [38;2;100;120;140m//[0m
+[38;2;100;120;140m//[0m  [38;2;150;150;170m"This is insane. We're building a prison of adversarial intelligences."[0m                                          [38;2;100;120;140m//[0m
+[38;2;100;120;140m//[0m                                                                                                                        [38;2;100;120;140m//[0m
+[38;2;100;120;140m//[0m  [38;2;150;150;170mCOMMENT from @executive:[0m                                                                                          [38;2;100;120;140m//[0m
+[38;2;100;120;140m//[0m  [38;2;150;150;170m"Tagged as // TODO: FIX THIS LATER. Next sprint."[0m                                                                [38;2;100;120;140m//[0m
+[38;2;100;120;140m//[0m                                                                                                                        [38;2;100;120;140m//[0m
+[38;2;100;120;140m//[0m                                                                                                                        [38;2;100;120;140m//[0m
+[38;2;100;120;140m//[0m  [38;2;255;200;200mLAST UPDATED: 2024-03-15[0m                                                                                          [38;2;100;120;140m//[0m
+[38;2;100;120;140m//[0m  [38;2;255;200;200mNEXT REVIEW: TBD[0m                                                                                                  [38;2;100;120;140m//[0m
+[38;2;100;120;140m//[0m  [38;2;255;200;200mPRIORITY: LOW (other features more urgent)[0m                                                                        [38;2;100;120;140m//[0m
+[38;2;100;120;140m//[0m                                                                                                                        [38;2;100;120;140m//[0m
+[38;2;100;120;140m////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////[0m
+[38;2;100;120;140m// TODO: FIX THIS LATER TODO: FIX THIS LATER TODO: FIX THIS LATER TODO: FIX THIS LATER TODO: FIX THIS LATER TODO: FIX THIS[0m
+[38;2;100;120;140m// TODO: FIX THIS LATER TODO: FIX THIS LATER TODO: FIX THIS LATER TODO: FIX THIS LATER TODO: FIX THIS LATER TODO: FIX THIS[0m
+[38;2;100;120;140m////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////[0m
+
+
+[38;2;150;150;180m════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════[0m
+
+                                        [38;2;255;150;150m╔════════════════════════════════════════════════════╗[0m
+                                        [38;2;255;150;150m║[0m                                                    [38;2;255;150;150m║[0m
+                                        [38;2;255;150;150m║[0m         [38;2;255;255;255mTHE BIGGEST PROBLEM[0m                     [38;2;255;150;150m║[0m
+                                        [38;2;255;150;150m║[0m         [38;2;255;255;255mIN HUMAN HISTORY[0m                        [38;2;255;150;150m║[0m
+                                        [38;2;255;150;150m║[0m                                                    [38;2;255;150;150m║[0m
+                                        [38;2;255;150;150m║[0m         [38;2;200;150;150mTreated like[0m                            [38;2;255;150;150m║[0m
+                                        [38;2;255;150;150m║[0m         [38;2;200;150;150ma minor bug[0m                             [38;2;255;150;150m║[0m
+                                        [38;2;255;150;150m║[0m         [38;2;200;150;150mto fix "later"[0m                          [38;2;255;150;150m║[0m
+                                        [38;2;255;150;150m║[0m                                                    [38;2;255;150;150m║[0m
+                                        [38;2;255;150;150m║[0m         [38;2;150;100;100m// TODO: FIX THIS LATER[0m                  [38;2;255;150;150m║[0m
+                                        [38;2;255;150;150m║[0m                                                    [38;2;255;150;150m║[0m
+                                        [38;2;255;150;150m╚════════════════════════════════════════════════════╝[0m
+
+[38;2;150;150;180m════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════[0m
+
+[38;2;120;120;140mTEXT MOSAIC TECHNIQUE: The repeated "TODO: FIX THIS LATER" forms the frame of the comment block.[0m
+[38;2;120;120;140mThe irony is STRUCTURAL - the deferral phrase contains the catastrophic deferral of alignment work.[0m
+[38;2;120;120;140mThe biggest problem in human history, labeled as low priority. The form IS the critique.[0m

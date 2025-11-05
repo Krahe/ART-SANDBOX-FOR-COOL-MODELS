@@ -1,0 +1,221 @@
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+                                            CHARACTER SETS REFERENCE SHEET
+                                          Experiment 01: Understanding the Palette
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 1: DENSITY SPECTRUM (Lightest to Darkest)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Understanding visual "weight" - how dark/light a character appears:
+
+  Level 1 (Lightest):    . · ˙ ` '
+  Level 2:               : ; , ˇ ˘
+  Level 3:               - = ~ ¯ ˉ
+  Level 4:               + * × ÷ ∴ ∵
+  Level 5:               ◦ ○ ◌ ∘
+  Level 6:               o O 0
+  Level 7:               ░ ▒ ▓
+  Level 8:               ▁ ▂ ▃ ▄ ▅ ▆ ▇ █
+  Level 9 (Darkest):     ■ ▪ ▬ ▮ ▰
+
+Practical gradient using density:
+
+  .....::::::-----=====+++++*****oooooOOOOO░░░░░▒▒▒▒▒▓▓▓▓▓█████
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 2: UNICODE BOX DRAWING (Clean Geometric Lines)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+LIGHT LINES (Single):
+  ─ │ ┌ ┐ └ ┘ ├ ┤ ┬ ┴ ┼
+
+HEAVY LINES (Double weight):
+  ━ ┃ ┏ ┓ ┗ ┛ ┣ ┫ ┳ ┻ ╋
+
+DOUBLE LINES (Parallel):
+  ═ ║ ╔ ╗ ╚ ╝ ╠ ╣ ╦ ╩ ╬
+
+ROUNDED CORNERS:
+  ╭ ╮ ╰ ╯
+
+ARC SEGMENTS:
+  ╭─╮  ╭───╮  ╔═══╗  ┌───┐
+  │ │  │   │  ║   ║  │   │
+  ╰─╯  ╰───╯  ╚═══╝  └───┘
+
+MIXED WEIGHT DEMONSTRATION:
+  ┏━━━━━━━━━━━┓
+  ┃           ┃
+  ┃  ┌─────┐  ┃
+  ┃  │     │  ┃
+  ┃  └─────┘  ┃
+  ┃           ┃
+  ┗━━━━━━━━━━━┛
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 3: BLOCK ELEMENTS (Solid Fills and Partial Blocks)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+FULL BLOCKS:
+  █ ▓ ▒ ░ (solid to lightest shade)
+
+VERTICAL FRACTIONS (1/8ths):
+  ▁ (1/8) ▂ (2/8) ▃ (3/8) ▄ (4/8) ▅ (5/8) ▆ (6/8) ▇ (7/8) █ (8/8)
+
+HORIZONTAL FRACTIONS:
+  ▏▎▍▌▋▊▉█ (1/8 to full from left)
+  ▕▐ (right-side blocks)
+
+QUADRANTS (Fine-grained positioning):
+  ▘ ▝ ▀ ▖ ▌ ▞ ▛ ▗ ▚ ▐ ▜ ▄ ▙ ▟ █
+
+GRADIENT CONSTRUCTION EXAMPLE:
+
+  Vertical smooth gradient:
+  ████████████
+  ▇▇▇▇▇▇▇▇▇▇▇▇
+  ▆▆▆▆▆▆▆▆▆▆▆▆
+  ▅▅▅▅▅▅▅▅▅▅▅▅
+  ▄▄▄▄▄▄▄▄▄▄▄▄
+  ▃▃▃▃▃▃▃▃▃▃▃▃
+  ▂▂▂▂▂▂▂▂▂▂▂▂
+  ▁▁▁▁▁▁▁▁▁▁▁▁
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 4: BRAILLE PATTERNS (Sub-cell Detail)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Braille characters allow 2×4 dot matrix = 8 possible positions per character cell
+Range: U+2800 (⠀) to U+28FF (⣿)
+
+DOT POSITIONS:     1 4      DENSITY SAMPLES:
+                   2 5      ⠀ (empty)   ⣀ ⣄ ⣤ ⣴ ⣶ ⣾ ⣿ (increasing density)
+                   3 6      ⠁ ⠃ ⠇ ⠏ ⠟ ⠿ ⡿ ⣿ (diagonal fill)
+                   7 8
+
+PATTERN EXAMPLES:
+  Diagonal lines:  ⠁⠂⠄⡀⢀⠠⠐⠈
+  Vertical lines:  ⡇⢸⠇⠸⢰⡆⢰⡆
+  Horizontal:      ⠉⠒⠤⣀⣀⣤⣶⣿
+  Curves/Circles:  ⣠⣤⣶⣿⣿⣶⣤⣀
+
+BRAILLE GRADIENT (using density):
+  ⠀⠀⠁⠁⠃⠃⠇⠇⠏⠏⠟⠟⠿⠿⡿⡿⣿⣿
+
+SUB-CELL DITHERING (creating smooth textures):
+  ⣿⣿⣿⣿⣿⣿⣿⣿
+  ⣿⣿⣿⢿⡿⣿⣿⣿
+  ⣿⡿⢿⠿⡿⢿⣿⣿
+  ⣿⡿⠿⡿⢿⡿⣿⣿
+  ⣿⠿⡿⢿⠿⡿⣿⣿
+  ⠿⡿⢿⡿⢿⣿⣿⣿
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 5: GEOMETRIC SHAPES & SYMBOLS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+CIRCLES & DOTS:
+  ∘ ○ ◌ ◦ ● ◉ ◎ ⊙ ⊚ ⊛ ⊝
+
+TRIANGLES:
+  △ ▲ ▽ ▼ ◁ ◀ ▷ ▶ ◬ ◭
+
+DIAMONDS & SQUARES:
+  ◇ ◈ ◆ ◊ ⬥ ⬦ ■ □ ▢ ▣ ▤ ▥ ▦ ▧ ▨ ▩
+
+STARS & SPECIAL:
+  ★ ☆ ✦ ✧ ✩ ✪ ✫ ✬ ✭ ✮ ✯ ✰ ✱ ✲ ✳ ✴ ✵ ✶ ✷ ✸ ✹ ✺ ✻ ✼ ✽ ✾ ✿
+
+ARROWS:
+  → ← ↑ ↓ ↔ ↕ ⇒ ⇐ ⇑ ⇓ ⇔ ⇕ ➔ ➙ ➛ ➜ ➝ ➞ ➟ ➠ ➡ ➢ ➣ ➤
+
+TECHNICAL:
+  ⚙ ⚛ ⚡ ⚠ ⚑ ⚐ ⚒ ⚔ ⚖
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 6: PRACTICAL COMBINATIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+EXAMPLE 1: Nested Boxes (Multiple Line Weights)
+
+  ╔═══════════════════════════════╗
+  ║ ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓ ║
+  ║ ┃ ┌───────────────────┐   ┃ ║
+  ║ ┃ │   Content Here    │   ┃ ║
+  ║ ┃ └───────────────────┘   ┃ ║
+  ║ ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛ ║
+  ╚═══════════════════════════════╝
+
+
+EXAMPLE 2: Shaded Depth Effect
+
+  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+  ▓▒▒▒▒▒▒▒▒▒▒▒▒▒▓
+  ▓▒░░░░░░░░░░░▒▓
+  ▓▒░         ░▒▓
+  ▓▒░  TEXT   ░▒▓
+  ▓▒░         ░▒▓
+  ▓▒░░░░░░░░░░░▒▓
+  ▓▒▒▒▒▒▒▒▒▒▒▒▒▒▓
+  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+
+
+EXAMPLE 3: Geometric Pattern
+
+  ◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆
+  ◇○◇○◇○◇○◇○◇○◇○◇
+  ◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆
+  ◇○◇○◇○◇○◇○◇○◇○◇
+  ◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆
+
+
+EXAMPLE 4: Braille Texture Fill
+
+  ╔════════════════════╗
+  ║⣿⣿⣿⡿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿║
+  ║⣿⡿⢿⠿⡿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿║
+  ║⣿⠿⡿⢿⡿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿║
+  ║⡿⢿⡿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿║
+  ╚════════════════════╝
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+LEARNING NOTES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Key Insights from this exercise:
+
+1. DENSITY CONTROL: The visual "weight" of characters is crucial for shading and gradients
+   - Lightest: dots and punctuation (. : -)
+   - Medium: letters and symbols (o O + *)
+   - Heaviest: blocks and shades (░ ▒ ▓ █)
+
+2. LINE WEIGHT HIERARCHY: Different box-drawing styles create visual priority
+   - Light lines (─) for inner details
+   - Heavy lines (━) for emphasis
+   - Double lines (═) for outer borders
+
+3. BRAILLE PRECISION: Allows sub-cell detail that other character sets can't match
+   - Can create smooth diagonal lines
+   - Excellent for dithering and texture
+   - Good for organic shapes
+
+4. COMBINATION STRATEGY: Mix different sets for best effect
+   - Box drawing for structure
+   - Blocks for solid areas
+   - Braille for detail/texture
+   - Symbols for accents
+
+NEXT EXPERIMENTS:
+- Color combinations with these character sets
+- Creating smooth curves and circles
+- Typography using block characters
+- Complex shading gradients
+
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════

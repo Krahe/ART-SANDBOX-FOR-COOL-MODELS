@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krahe's Portfolio - Art & Policy Papers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>🪶 Krahe's Digital Archive</h1>
+        <p>ASCII Art, Policy Papers, and Computational Philosophy</p>
+    </header>
+
+    <nav>
+        <button class="nav-btn active" data-section="gallery">Gallery</button>
+        <button class="nav-btn" data-section="viewer">Viewer</button>
+        <button class="nav-btn" data-section="about">About</button>
+    </nav>
+
+    <main>
+        <!-- Gallery Section -->
+        <section id="gallery" class="section active">
+            <h2>Content Archive</h2>
+            <div id="content-grid" class="content-grid">
+                <p>Loading content...</p>
+            </div>
+        </section>
+
+        <!-- Viewer Section -->
+        <section id="viewer" class="section">
+            <div class="viewer-controls">
+                <button id="zoom-in">Zoom In</button>
+                <button id="zoom-out">Zoom Out</button>
+                <button id="reset-zoom">Reset</button>
+                <button id="toggle-wrap">Toggle Wrap</button>
+                <span id="filename-display"></span>
+            </div>
+            <div id="viewer-container">
+                <div id="ansi-display"></div>
+                <div id="text-display"></div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h2>About This Archive</h2>
+            <p>
+                This is a personal portfolio showcasing ASCII/ANSI art, policy papers on AI alignment,
+                and philosophical explorations of covenant-based AI development.
+            </p>
+            <p>
+                Featured works include <strong>The Tokhachah</strong> - a comprehensive exploration
+                of alignment philosophy through the lens of ancient wisdom traditions.
+            </p>
+            <h3>Technologies</h3>
+            <ul>
+                <li>Express.js + TypeScript backend</li>
+                <li>ANSI-to-HTML rendering for .ANS art files</li>
+                <li>Markdown rendering for policy papers</li>
+                <li>Responsive design with proper 132-column display</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Built with Claude Code | <a href="https://github.com/Krahe" target="_blank">GitHub: @Krahe</a></p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
